@@ -12,3 +12,4 @@ And I fill in "Password" with "password"
 And I fill in "Password Confirmation" with "password"
 When I click the "Register" button
 Then I should see "Successfully registered"
+And the user "amber@random.com" should exist with name "Amber"
