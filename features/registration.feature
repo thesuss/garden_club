@@ -13,3 +13,16 @@ And I fill in "Password Confirmation" with "password"
 When I click the "Register" button
 Then I should see "Successfully registered"
 And the user "amber@random.com" should exist with name "Amber"
+
+Scenario Outline: User sign up sad path
+  Given I am on the "registration" page
+  When I fill in the form with data :
+  | Name   | Email   | Email Confirmation | Password   | Password Confirmation   |
+  | <name> | <email> | <email_confirmation> | <password> | <password_confirmation> |
+  When I click the "Register" button
+  Then I should be on the "registration" page
+  And I should see <error>
+
+Scenarios:
+  | name      | email   | email_confirmation | password   | password_confirmation   | error |
+  | Jenny      | jenny@random.com   | jenny@ranom.com | password   | password   | "Email confirmation doesn't match" |

@@ -13,3 +13,7 @@ end
 When(/^I click the "([^"]*)" button$/) do |button|
   click_button(button)
 end
+
+Then(/^I should be on the "([^"]*)" page$/) do |page|
+  expect(current_path).to eq registration_index_path
+end
