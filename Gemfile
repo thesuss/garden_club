@@ -39,7 +39,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'rake'
-  gem 'coveralls'
+  gem 'coveralls', require: false
 end
 
 group :development do
