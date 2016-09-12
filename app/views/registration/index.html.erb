@@ -1,28 +1,31 @@
-<h1>Register</h1>
-<div class="container">
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><%= value %></div>
+<div class="content">
+  <h1 class="content-head is-center">Register</h1>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+  </div>
+  <%= form_for(@user, :html => { :class => 'pure-form pure-form-aligned' }) do |f| %>
+  <div class="pure-control-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Your Name' %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: 'your@email.com' %><br>
+    <%= f.label :email_confirmation, 'Email Confirmation' %>
+    <%= f.text_field :email_confirmation, placeholder: 'your@email.com' %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.label :password_confirmation, 'Password Confirmation' %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.submit 'Register', class: 'hundra pure-button pure-button-primary'  %>
+  </div>
   <% end %>
 </div>
-
-<%= form_for @user do |f| %>
-<p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</p>
-<p>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
-  <%= f.label :email_confirmation, 'Email Confirmation' %>
-  <%= f.text_field :email_confirmation %>
-</p>
-<p>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
-  <%= f.label :password_confirmation, 'Password Confirmation' %>
-  <%= f.password_field :password_confirmation %>
-</p>
-<p>
-  <%= f.submit 'Register' %>
-</p>
-<% end %>
