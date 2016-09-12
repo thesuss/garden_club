@@ -29,3 +29,5 @@ Scenarios:
   | Jenny | jenny@random.com | jenny@random.com   | password | paord   | "Password confirmation doesn't match" |
   |       | jenny@random.com | jenny@random.com   | password | password   | "Name can't be blank" |
   | Jenny | jennyrandom.com  | jennyrandom.com    | password | password   | "Email is invalid" |
+  | Jenny | jenny@random.com | jenny@random.com   |          |            | "Password can't be blank" |
+  | Jenny |                  |                    | password | password   | "Email can't be blank" |
