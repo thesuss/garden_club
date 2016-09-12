@@ -1,2 +1,22 @@
 <h1>Register</h1>
-<p>Find me in app/views/registration/index.html.erb</p>
+<%= form_for :user do |f| %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :email %>
+  <%= f.text_field :email %><br>
+  <%= f.label :email_confirmation, 'Email Confirmation' %>
+  <%= f.text_field :email_confirmation %>
+</p>
+<p>
+  <%= f.label :password %>
+  <%= f.text_field :password %><br>
+  <%= f.label :password_confirmation, 'Password Confirmation' %>
+  <%= f.text_field :password_confirmation %>
+</p>
+<p>
+  <%= f.submit 'Register' %>
+</p>
+<% end %>
