@@ -5,3 +5,10 @@ Feature: As a gardener
 Scenario: Register as a user
 Given I am on the "registration" page
 Then I should see "Register"
+When I fill in "Name" with "Amber"
+And I fill in "Email" with "amber@random.com"
+And I fill in "Email Confirmation" with "amber@random.com"
+And I fill in "Password" with "password"
+And I fill in "Password Confirmation" with "password"
+When I click the "Register" button
+Then I should see "Successfully registered"
