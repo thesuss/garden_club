@@ -45,6 +45,9 @@ RSpec.describe User, type: :model do
     it 'shold have an @' do
       expect(FactoryGirl.build(:user, email: "amberamber.com", email_confirmation: "amberamber.com")).not_to be_valid
     end
+    it 'shold have a .' do
+      expect(FactoryGirl.build(:user, email: "amber@ambercom", email_confirmation: "amber@ambercom")).not_to be_valid
+    end
   end
 
 
