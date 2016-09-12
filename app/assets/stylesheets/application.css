@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+ /* Set your content font stack here: */
+ font-family: 'Open Sans', sans-serif;
+}
