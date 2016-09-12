@@ -25,12 +25,17 @@ RSpec.describe User, type: :model do
 
   describe 'Actual validation of confirmation?' do
     it 'tests password confirmation' do
-      @user = User.create(name: "Amber", email: "amber@amber.com", email_confirmation: "amber@amber.com", password: "password", password_confirmation: "password")
+      @user = FactoryGirl.build(:user, name: "Amber", email: "amber@amber.com", email_confirmation: "amber@amber.com", password: "password", password_confirmation: "password")
       expect(@user.save).to be true
     end
 
     it 'tests password confirmation sad path' do
-      @user = User.create(name: "Amber", email: "amber@amber.com", email_confirmation: "amber@amber.com", password: "password", password_confirmation: "p")
+      @user = FactoryGirl.build(:user, name: "Amber", email: "amber@amber.com", email_confirmation: "amber@amber.com", password: "password", password_confirmation: "p")
+      expect(@user.save).to be false
+    end
+
+    it 'tests email confirmation sad path' do
+      @user = FactoryGirl.build(:user, name: "Amber", email: "amber@amber.com", email_confirmation: "amber@am", password: "password", password_confirmation: "password")
       expect(@user.save).to be false
     end
   end
