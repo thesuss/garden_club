@@ -42,11 +42,14 @@ RSpec.describe User, type: :model do
 
 
   describe 'Email validations' do
-    it 'shold have an @' do
+    it 'should have an @' do
       expect(FactoryGirl.build(:user, email: "amberamber.com", email_confirmation: "amberamber.com")).not_to be_valid
     end
-    it 'shold have a .' do
+    it 'should have a .' do
       expect(FactoryGirl.build(:user, email: "amber@ambercom", email_confirmation: "amber@ambercom")).not_to be_valid
+    end
+    it 'should not have a space' do
+      expect(FactoryGirl.build(:user, email: "am ber@amber.com", email_confirmation: "am ber@amber.com")).not_to be_valid
     end
   end
 
