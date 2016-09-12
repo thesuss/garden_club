@@ -40,4 +40,12 @@ RSpec.describe User, type: :model do
     end
   end
 
+
+  describe 'Email validations' do
+    it 'shold have an @' do
+      expect(FactoryGirl.build(:user, email: "amberamber.com", email_confirmation: "amberamber.com")).not_to be_valid
+    end
+  end
+
+
 end
