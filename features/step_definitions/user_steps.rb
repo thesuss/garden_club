@@ -10,3 +10,9 @@ When(/^I fill in the form with data :$/) do |table|
     end
   end
 end
+
+Given(/^the following users exist:$/) do |table|
+  table.hashes.each do |hash|
+    FactoryGirl.create(:user, hash)
+  end
+end

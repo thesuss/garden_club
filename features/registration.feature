@@ -2,6 +2,11 @@ Feature: As a gardener
   in order to access all the bits of the site
   I would like to be able to register.
 
+Background:
+Given the following users exist:
+| name   | email           | email_confirmation |
+| Anna   | anna@random.com | anna@random.com    |
+
 Scenario: Register as a user
 Given I am on the "registration" page
 Then I should see "Register"
@@ -31,3 +36,4 @@ Scenarios:
   | Jenny | jennyrandom.com  | jennyrandom.com    | password | password   | "Email is invalid" |
   | Jenny | jenny@random.com | jenny@random.com   |          |            | "Password can't be blank" |
   | Jenny |                  |                    | password | password   | "Email can't be blank" |
+  | Anna  | anna@random.com  | anna@random.com    | password | password   | "Email has already been taken" |
