@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800';
+
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+ /* Set your content font stack here: */
+ font-family: 'Open Sans', sans-serif;
+}
+
+.content-head {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 2em 0 1em;
+}
+
+.is-center {
+    text-align: center;
+}
+
+.hundra {width:100%;}
