@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def index
+    @user = User.new
+  end
   def create
     @user = User.new(email: user_params[:email],
                      email_confirmation: user_params[:email_confirmation],

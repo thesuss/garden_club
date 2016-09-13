@@ -1,7 +1,7 @@
 <div class="content">
   <h1 class="content-head is-center">Register</h1>
-  
-  <%= form_for(@user, :html => { :class => 'pure-form pure-form-aligned' }) do |f| %>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => 'pure-form pure-form-aligned' })) do |f| %>
   <div class="pure-control-group">
       <%= f.label :name %>
       <%= f.text_field :name, placeholder: 'Your Name' %>
