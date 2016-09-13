@@ -1,0 +1,99 @@
+As a gardener
+in order to access all the bits of the site
+I would like to be able to register.
+
+As a registered user
+in order to view my user portal
+I would like to be able to login.
+
+As a user
+in order to facilitate login and registration
+I would like to sign up and login with Facebook.
+
+As a user
+in order edit my profile with good info
+I would like to be able to add information, a website, and add a garden address.
+
+As a user
+in order to share my views on gardening
+I would like to be able to write and share articles.
+
+As a user
+in order to troll other peoples' gardening articles
+I would like to be able to post comments.
+
+As a user
+in order to protect my privacy
+I would like to be able to log out.
+
+As a user
+in order to not have to log in every time I visit
+I would like the site to "remember me".
+
+As a user
+in order to rank articles
+I would like to be able to give each article a rating.
+
+As a user
+in order to access the paid functions of the site
+I would like to be able to sign up for paid membership.
+
+-----
+
+As a paid user
+in order to have my articles more easily found
+I would like to be able to tag my articles.
+
+As a paid user
+in order to show my face
+I'd like to be able to upload a profile photo.
+
+-----
+
+As a visitor
+in order to find other peoples' gardens
+I would like to see a map of users' gardens on their profile.
+
+As a visitor
+in order to read about gardening
+I would like to see articles (excerpts) on the home page.
+
+As a visitor
+in order to see articles written by other individual users
+I would like to see a list of a user's articles on their profile.
+
+-----
+
+Feature Requests:
+
+As a user
+in order to show people my garden
+I would like to be able to upload garden photos.
+
+As a user
+in case I forget my password
+I'd like to be able to recover/change it.
+
+As a user
+in order to find the articles I want
+I'd like to have a search function (text, geolocation, tags, etc.)
+
+As a user
+in order to have pretty blog articles
+I'd like to be able to add headlines, pictures, formatting, etc.
+
+As a user
+in order to keep track of my favorite articles
+I'd like a list of articles I've rated and my ratings for them on my portal.
+
+As a user
+in order to keep up-to-date on my favorite gardeners
+I'd like to get emails when my marked users post a new article (or have it display on portal).
+
+As a user
+in order to have a deeper exchange with my fellow gardeners
+I'd like to be able to respond to comments.
+
+As a user
+in order to DM my fellow gardens
+I'd like to be able to send and receive messages through the garden club.
