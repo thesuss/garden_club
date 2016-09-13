@@ -15,12 +15,12 @@
   <div class="pure-control-group">
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off", placeholder: @minimum_password_length.to_s + ' characters minimum' %> <br />
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, 'Password Confirmation' %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up", class: 'hundra pure-button pure-button-primary' %>
+    <%= f.submit "Register", class: 'hundra pure-button pure-button-primary' %>
   </div>
 <% end %>
 
