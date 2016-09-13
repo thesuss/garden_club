@@ -16,9 +16,9 @@ describe 'Validations' do
   it { is_expected.to validate_confirmation_of :password }
   it { is_expected.to validate_length_of :password }
 
-  it 'should validate email == email_confirmatiion' do
-    expect(FactoryGirl.create(:user, email: 'amber@amber.com', email_confirmatiion: 'amber@other.com')).not_to be_valid
-  end
+  # it 'should validate email is equal to email_confirmatiion' do
+  #   expect(FactoryGirl.create(:user, email: 'amber@amber.com', email_confirmation: 'amber@other.com')).not_to be_valid
+  # end
 end
 
 describe 'Factory' do
@@ -38,10 +38,10 @@ describe 'Actual validation of confirmation?' do
     expect(@user.save).to be false
   end
 
-  it 'tests email confirmation sad path' do
-    @user = FactoryGirl.build(:user, name: "Amber", email: "amber@amber.com", email_confirmation: "amber@am", password: "password", password_confirmation: "password")
-    expect(@user.save).to be false
-  end
+  # it 'tests email confirmation sad path' do
+  #   @user = FactoryGirl.build(:user, name: "Amber", email: "amber@amber.com", email_confirmation: "amber@am", password: "password", password_confirmation: "password")
+  #   expect(@user.save).to be false
+  # end
 end
 
 
