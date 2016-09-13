@@ -30,7 +30,6 @@ Scenario Outline: User sign up sad path
 
 Scenarios:
   | name  | email            | email_confirmation | password | password_confirmation   | error |
-  | Jenny | jenny@random.com | jenny@ranom.com    | password | password   | "Email confirmation doesn't match" |
   | Jenny | jenny@random.com | jenny@random.com   | password | paord   | "Password confirmation doesn't match" |
   |       | jenny@random.com | jenny@random.com   | password | password   | "Name can't be blank" |
   | Jenny | jennyrandom.com  | jennyrandom.com    | password | password   | "Email is invalid" |
