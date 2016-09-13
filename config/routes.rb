@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'registration/index'
   resources :users
   #placeholder until we get a real homepage route
