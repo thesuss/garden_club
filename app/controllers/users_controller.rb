@@ -5,6 +5,7 @@ class UsersController < ApplicationController
                      name: user_params[:name],
                      password: user_params[:password],
                      password_confirmation: user_params[:password_confirmation])
+                     binding.pry
     if @user.save
       flash[:success] = "Successfully registered"
       redirect_to registration_index_path
