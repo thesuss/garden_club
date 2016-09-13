@@ -1,5 +1,5 @@
 <div class="user">
-<h1 class="content-head is-center">Forgot your password?</h1>
+  <h1 class="content-head is-center">Forgot your password?</h1>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, :class => 'pure-form pure-form-aligned' }) do |f| %>
     <%= devise_error_messages! %>
 
