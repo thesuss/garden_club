@@ -13,9 +13,12 @@ describe 'Validations' do
   it { is_expected.to validate_presence_of :email }
   it { is_expected.to validate_presence_of :password }
   it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
-  it { is_expected.to validate_confirmation_of :email }
   it { is_expected.to validate_confirmation_of :password }
   it { is_expected.to validate_length_of :password }
+
+  it 'should validate email == email_confirmatiion' do
+    expect(FactoryGirl.create(:user, email: 'amber@amber.com', email_confirmatiion: 'amber@other.com')).not_to be_valid
+  end
 end
 
 describe 'Factory' do
