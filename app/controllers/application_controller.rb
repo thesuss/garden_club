@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email_confirmation])
     else
       flash[:error] = "Email confirmation doesn't match"
+      # in the future, this should return to registration page with information previously entered
       redirect_to root_path
     end
   end
