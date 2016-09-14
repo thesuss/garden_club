@@ -9,5 +9,5 @@ Feature: As a user
 
 Scenario: Write an article
   Given I am logged in
-  And I am on the "compose" page
+  And I am on the "compose" page for "Anna"
   Then I should see "Publish article"

@@ -25,3 +25,8 @@ Given(/^I am logged in$/) do
   fill_in "Password", with: 'password'
   click_button "Log in"
 end
+
+Given(/^I am on the "([^"]*)" page for "([^"]*)"$/) do |page, user|
+  
+  visit
+end
