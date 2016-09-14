@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   def new
-    @article = Article.new
+    #@user = User.find(params[:user_id])
+    @article = Article.new(user_id: current_user.id)
+    render 'users/articles/new'
   end
 
 
