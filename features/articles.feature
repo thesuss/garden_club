@@ -11,3 +11,7 @@ Scenario: Write an article
   Given I am logged in
   And I am on the "compose" page for "Anna"
   Then I should see "Publish article"
+  When I fill in "Title" with "Article Title"
+  And I fill in "Body" with "Article Body"
+  And I click the "Publish article" button
+  
