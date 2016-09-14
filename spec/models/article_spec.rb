@@ -17,15 +17,8 @@ RSpec.describe Article, type: :model do
 
   describe 'Factory' do
     it 'should have valid Factory' do
-      @user = User.new(name: "Amber", email: "amber@amber.com", password: "password", password_confirmation: "password")
       expect(FactoryGirl.create(:article)).to be_valid
     end
   end
 
-  describe 'Create article' do
-    it 'tests confirmation' do
-      @article = FactoryGirl.build(:article, title: "Titile", body: "content of article")
-      expect(@article.save).to be true
-    end
-  end
 end
