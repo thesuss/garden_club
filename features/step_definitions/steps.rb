@@ -1,5 +1,5 @@
 Given(/^I am on the "([^"]*)" page$/) do |page|
-  visit new_user_article_path(@user.id)
+  # visit new_user_article_path(@user.id)
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
@@ -26,7 +26,8 @@ Given(/^I am logged in$/) do
   click_button "Log in"
 end
 
-Given(/^I am on the "([^"]*)" page for "([^"]*)"$/) do |page, user|
-  
-  visit
+Given(/^I am on the "([^"]*)" page for "([^"]*)"$/) do |page, name|
+  @user_id = User.find_by(name: name).id
+  visit new_user_article_path(@user_id)
+  expect(current_path).to eq new_user_article_path(@user_id)
 end
