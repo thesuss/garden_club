@@ -1,5 +1,5 @@
 Given(/^I am on the "([^"]*)" page$/) do |page|
-  visit new_user_registration_path
+  visit new_user_article_path
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
