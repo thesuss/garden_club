@@ -1,4 +1,7 @@
-<%= form_for :article, url: article_path(current_user.id) do |f| %>
+<h1 class="content-head is-center">Publish article</h1>
+
+
+<%= form_for :article, url: article_path(current_user.id), :html => { :class => 'pure-form pure-form-aligned' } do |f| %>
 
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -14,18 +17,18 @@
     </div>
   <% end %>
 
-  <p>
+  <div class="pure-control-group">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </p>
+  </div>
 
-  <p>
+  <div class="pure-control-group">
     <%= f.label :body %><br>
     <%= f.text_area :body %>
-  </p>
+  </div>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Publish article', class: 'hundra pure-button pure-button-primary'  %>
   </p>
 
 <% end %>
