@@ -31,3 +31,9 @@ Given(/^I am on the "([^"]*)" page for "([^"]*)"$/) do |page, name|
   visit new_user_article_path(@user_id)
   expect(current_path).to eq new_user_article_path(@user_id)
 end
+
+When(/^I am on "([^"]*)" page for "([^"]*)"$/) do |page, name|
+  @user_id = User.find_by(name: name).id
+  visit user_articles_path(@user_id)
+  expect(current_path).to eq user_articles_path(@user_id)
+end
