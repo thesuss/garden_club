@@ -14,4 +14,5 @@ Scenario: Write an article
   When I fill in "Title" with "Article Title"
   And I fill in "Body" with "Article Body"
   And I click the "Publish article" button
-  
+  Then I should see "Article Title"
+  And I should see "Article Body"
