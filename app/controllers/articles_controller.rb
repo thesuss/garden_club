@@ -1,14 +1,10 @@
 class ArticlesController < ApplicationController
   def new
-    #@user = User.find(params[:user_id])
     @article = Article.new(user_id: current_user.id)
-    render 'users/articles/new'
   end
 
   def show
     @article = Article.find(params[:id])
-    render 'users/articles/show'
-
   end
 
   def create
@@ -19,10 +15,9 @@ class ArticlesController < ApplicationController
 
   def index
     @article = Article.all
-    render 'users/articles/index'
   end
   private
-    def article_params
-       params.require(:article).permit(:title, :body, :user_id)
-    end
+  def article_params
+     params.require(:article).permit(:title, :body, :user_id)
+  end
 end
