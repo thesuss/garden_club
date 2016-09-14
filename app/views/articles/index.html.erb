@@ -1,6 +1,6 @@
 <h1 class="content-head is-center"> <%= current_user.name %> Articles </h1>
-  <% current_user.articles.each do |article| %>
-    <ul>
-      <li><%= link_to article.title, user_article_path(current_user.id, article.id) %></li>
-    </ul>
-  <% end %>
+<% current_user.articles.each do |article| %>
+<ul>
+  <li><%= link_to article.title, user_article_path(current_user.id, article.id) %></li>
+</ul>
+<% end %>
