@@ -7,7 +7,7 @@ Background:
   | name   | email           |
   | Anna   | anna@random.com |
 
-Scenario:
+Scenario: Updating my profile
   Given I am logged in as "anna@random.com"
   And I am on the "home" page
   When I click the "My Profile" link
@@ -30,3 +30,8 @@ Scenario:
   And I should see "here's a blurb"
   And I should see "street"
   And I should see "414 63, Göteborg, Sverige"
+
+Scenario: Viewing someone else's profile
+  Given I am not logged in
+  When I visit the profile of "Anna"
+  Then I should see "anna@random.com"
