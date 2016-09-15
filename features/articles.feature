@@ -21,3 +21,7 @@ Scenario: Write an article
   When I am on "articles" page for "Anna"
   Then I should see "Article Title"
   And I should see "Article Title 2"
+
+Scenario: Trying to write an article when not logged in
+Given I on someones compose page
+Then I should see "You are not logged in"

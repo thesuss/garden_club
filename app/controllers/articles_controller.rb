@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
   def new
-    @article = Article.new(user_id: current_user.id)
+    if user_signed_in?
+      @article = Article.new(user_id: current_user.id)
+    else
+      redirect_to new_user_session_path
+      flash[:notice] = "You are not logged in - you need to be logged in to see this page"
+    end
   end
 
   def show
@@ -8,13 +13,23 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @article = @user.articles.create(article_params)
-    redirect_to user_article_path(@user.id, @article.id)
+    if user_signed_in?
+      @user = User.find(params[:user_id])
+      @article = @user.articles.create(article_params)
+      redirect_to user_article_path(@user.id, @article.id)
+    else
+      redirect_to new_user_session_path
+      flash[:notice] = "You are not logged in - you need to be logged in to see this page"
+    end
   end
 
   def index
-    @article = Article.all
+    if user_signed_in?
+      @article = Article.all
+    else
+      redirect_to new_user_session_path
+      flash[:notice] = "You are not logged in - you need to be logged in to see this page"
+    end
   end
   private
   def article_params
