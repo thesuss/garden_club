@@ -22,3 +22,11 @@ Scenario: Seeing front-page bits
   And I should see "One"
   And I should see "Two"
   And I should see "Three"
+
+Scenario: viewing articles when not logged in
+  Given I am not logged in
+  And I am on the "home" page
+  And I should see "Current Articles"
+  And I should see "One"
+  And I should see "Two"
+  And I should see "Three"
