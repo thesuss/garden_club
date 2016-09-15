@@ -13,15 +13,11 @@
 
   </head>
   <body>
-    <div class="pure-g">
-      <div class="pure-u-1">
-        <% flash.each do |key, value| %>
-        <div class="is-center <%= flash_class(key) %>">
-            <%= value %>
-        </div>
-        <% end %>
-      </div>
+    <% flash.each do |key, value| %>
+    <div class="is-center <%= flash_class(key) %>">
+        <%= value %>
     </div>
+    <% end %>
     <div class="content">
       <%= yield %>
     </div>
