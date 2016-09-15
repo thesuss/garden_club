@@ -52,8 +52,33 @@ a:hover {
   color: #000;
 }
 
+
+
 .startheader {
   width:100%;
   height:150px;
   background: url('garden.jpg') center center;
+}
+
+.menu {
+  color: #FFF;
+  background: #000;
+}
+
+.menu a:link {
+  color: #FFF;
+}
+
+.menu a:visited {
+  color: #fafafa;
+}
+
+.menu a:hover {
+  color: #FF891C;
+  background-color: #000;
+}
+
+.main-content {
+  padding: 0 40px 0 40px;
+  max-width:960px;
 }
