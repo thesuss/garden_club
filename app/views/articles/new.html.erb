@@ -1,5 +1,5 @@
 <h1 class="content-head is-center">Publish article</h1>
-<%= form_for @article, url:{action: "create"}, :html => { class: 'pure-form pure-form-aligned' } do |f| %>
+<%= form_for @article, url:{action: "create"}, html: { class: 'pure-form pure-form-aligned' } do |f| %>
 
   <% if @article.errors.any? %>
     <div id="error_explanation">
