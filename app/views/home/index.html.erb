@@ -1,7 +1,7 @@
 <% if current_user %>
-  <h1>Welcome, <%= current_user[:name] %></h1>
+  <h1 class="content-head is-center">Welcome, <%= current_user[:name] %></h1>
 <% else %>
-  <h1>Home#index</h1>
+  <h1 class="content-head is-center">Home#index</h1>
 <% end %>
 <p>Find me in app/views/home/index.html.erb</p>
 
@@ -15,5 +15,14 @@
 <% else %>
   <%= link_to "Log In", new_user_session_path %>
 <% end %>
+<h1 class="content-head is-center">Current Articles</h1>
+<% if Article.all != [] %>
+  <% Article.all.each do |article| %>
+  <ul>
+    <li><%= article.title %></li>
+  </ul>
+  <% end %>
 
-<h1>Current Articles</h1>
+<% else %>
+  <p> No articles written </p>
+<% end %>
