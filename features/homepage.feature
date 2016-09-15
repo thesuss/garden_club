@@ -4,10 +4,10 @@ Background:
 
   Given the following users exist:
     | name    | email            |
-    | Hanna 2  | hanna2@random.com |
+    | Hanna   | hanna@random.com |
 
 
-  And the following articles exist:
+  And "Hanna" has written the following articles:
     | title   | body             |
     | One     | One awesome text |
     | Two     | Two awesome text |

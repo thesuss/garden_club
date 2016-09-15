@@ -1,7 +1,10 @@
+
+
 FactoryGirl.define do
+  @random = rand(1..100)
   factory :article do
     title "MyString"
     body "MyText"
-    user
+    association :user, factory: :user
   end
 end
