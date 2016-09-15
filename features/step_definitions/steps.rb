@@ -28,16 +28,18 @@ end
 
 Given(/^I am on the "([^"]*)" page for "([^"]*)"$/) do |page, name|
   user_id = User.find_by(name: name).id
-  visit new_user_article_path(user_id)
-  expect(current_path).to eq new_user_article_path(@user_id)
+  case page
+  when "compose"
+    visit new_user_article_path(user_id)
+    expect(current_path).to eq new_user_article_path(user_id)
+  when "article"
+    visit user_articles_path(user_id)
+    expect(current_path).to eq user_articles_path(user_id)
+  else
+    "nothing"
+  end
 end
 
-When(/^I am on "([^"]*)" page for "([^"]*)"$/) do |page, name|
-  user_id = User.find_by(name: name).id
-  visit user_articles_path(user_id)
-  expect(current_path).to eq user_articles_path(@user_id)
-end
-
-Given(/^I on someones compose page$/) do
+Given(/^I am on someones compose page$/) do
   visit new_user_article_path(1)
 end

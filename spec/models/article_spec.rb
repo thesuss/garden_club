@@ -13,6 +13,8 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of :title }
     it { is_expected.to validate_presence_of :body }
     it { is_expected.to validate_presence_of :user_id }
+    it { is_expected.to belong_to(:user)}
+
   end
 
   describe 'Factory' do
@@ -20,5 +22,7 @@ RSpec.describe Article, type: :model do
       expect(FactoryGirl.create(:article)).to be_valid
     end
   end
+
+
 
 end
