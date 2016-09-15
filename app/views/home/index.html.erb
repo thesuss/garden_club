@@ -5,6 +5,10 @@
 <% end %>
 <p>Find me in app/views/home/index.html.erb</p>
 
+<% if user_signed_in? %>
+<%= link_to new_user_article_path(current_user), new_user_article_path(current_user) %>
+<% end %>
+
 <% if current_user %>
   <%= link_to 'My Profile', profile_path %><br>
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>

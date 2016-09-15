@@ -1,17 +1,16 @@
 class User < ApplicationRecord
+  has_many :articles, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
   attr_accessor :email_confirmation
 
-  validates :name,
-  :presence => true,
-  :uniqueness => {
-    :case_sensitive => false}
+  validates :name,  presence: true,
+                    uniqueness: { case_sensitive: false }
   validates :email, presence: true,
-                  uniqueness: true,
-                  format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+                    uniqueness: true,
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
