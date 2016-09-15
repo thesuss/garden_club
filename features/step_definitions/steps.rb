@@ -76,10 +76,24 @@ Given(/^I am on the "([^"]*)" page for "([^"]*)"$/) do |page, name|
   when "article"
     visit user_articles_path(user_id)
     expect(current_path).to eq user_articles_path(user_id)
+  when "profile"
+    visit user_profile_path(user_id)
+    expect(current_path).to eq user_profile_path(user_id)
   else
     "nothing"
   end
 end
+
+Then(/^I should be on the "([^"]*)" page for "([^"]*)"$/) do |page, name|
+  user_id = User.find_by(name: name).id
+  case page
+  when "profile"
+    expect(current_path).to eq user_profile_path(user_id)
+  else
+    "nothing"
+  end
+end
+
 
 Given(/^I am on someones compose page$/) do
   visit new_user_article_path(1)
