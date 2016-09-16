@@ -52,6 +52,14 @@ a:hover {
   color: #000;
 }
 
+
+
+.startheader {
+  width:100%;
+  height:150px;
+  background: url('garden.jpg') center center;
+}
+
 .menu {
   color: #FFF;
   background: #000;
