@@ -4,14 +4,20 @@ Feature: As a user
 
 Background:
   Given the following users exist:
-  | name   | email           |
-  | Anna   | anna@random.com |
+    | name   | email           |
+    | Anna   | anna@random.com |
 
-Scenario:
+  And "Anna" has written the following articles:
+    | title   | body             |
+    | One     | One awesome text |
+    | Two     | Two awesome text |
+    | Three   | Three good texts |
+
+Scenario: Updating my profile
   Given I am logged in as "anna@random.com"
   And I am on the "home" page
   When I click the "My Profile" link
-  Then I should be on the "Profile" page
+  Then I should be on the "profile" page for "Anna"
   And I should see "Edit Profile"
   When I click the "Edit Profile" link
   When I fill in "Name" with "Amber Bo Bamber"
@@ -23,10 +29,25 @@ Scenario:
   And I fill in "Country" with "Sverige"
   And I fill in "Current password" with "password"
   And I click the "Update" button
-  Then I should be on the "Profile" page
+  Then I should be on the "profile" page for "Amber Bo Bamber"
   And I should see "Amber Bo Bamber"
   And I should see "Your account has been updated successfully"
   And I should see "www.garden.com"
   And I should see "here's a blurb"
   And I should see "street"
   And I should see "414 63, Göteborg, Sverige"
+
+Scenario: Viewing someone else's profile
+  Given I am not logged in
+  When I am on the "profile" page for "Anna"
+  Then I should see "Profile for Anna"
+
+Scenario: Anna can see her own articles on her profile
+  Given I am logged in as "anna@random.com"
+  And I am on the "profile" page for "Anna"
+  Then I should see "Three good texts"
+
+Scenario: A non-logged-in user can see Anna's articles on her profile
+  Given I am not logged in
+  And I am on the "profile" page for "Anna"
+  Then I should see "Three good texts"
