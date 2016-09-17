@@ -19,7 +19,7 @@
   <% end %>
 </div>
 <div>
-  <% if current_user.pro %>
+  <% if @user.pro %>
     <p> <%= @user.name %> is a pro member</p>
   <% else %>
     <p>  <%= @user.name %> has not signed up for pro membership</p>
