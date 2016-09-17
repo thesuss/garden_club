@@ -81,6 +81,9 @@ Given(/^I am on the "([^"]*)" page for "([^"]*)"$/) do |page, name|
   when "profile"
     visit user_profile_path(user_id)
     expect(current_path).to eq user_profile_path(user_id)
+  when "Edit Profile"
+    visit edit_user_registration_path(user_id)
+    expect(current_path).to eq edit_user_registration_path(user_id)
   else
     "nothing"
   end

@@ -21,7 +21,13 @@
     <% end %>
     <% unless @user.g_postcode == "" %><%= @user.g_postcode %><% end %><% unless @user.g_city == "" %>, <%= @user.g_city %><% end %><% unless @user.g_country == "" %>, <%= @user.g_country %><% end %>
   <% end %>
-
+</div>
+<div>
+  <% if @user.pro %>
+    <p> <%= @user.name %> is a pro member</p>
+  <% else %>
+    <p>  <%= @user.name %> has not signed up for pro membership</p>
+  <% end %>
 </div>
 <div>
   <% if @user.articles != nil %>
