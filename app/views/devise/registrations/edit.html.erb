@@ -10,6 +10,14 @@
       <p> Sign up for pro membership!</p>
     <% end %>
   </div>
+  <div class="pure-control-group">
+    <%= f.label :pro, 'Check the box to become a pro member' %>
+    <% if current_user.pro %>
+      <%= f.check_box :pro, checked: true  %>
+    <% else %>
+      <%= f.check_box :pro  %>
+    <% end %>
+  </div>
 
   <div class="pure-control-group">
     <%= f.label :email %>
