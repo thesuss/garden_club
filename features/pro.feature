@@ -7,8 +7,15 @@ Background:
     | name   | email           | pro  |
     | Jimi   | jimi@random.com | true |
 
-Scenario: See wether or not one is a pro member
+Scenario: See wether or not a user is a pro member
   Given I am logged in as "jimi@random.com"
   And I am on the "profile" page for "Jimi"
   Then I should see "Jimi is a pro member"
   And I should not see "Jimi has not signed up for pro membership"
+
+
+Scenario: See wether or not one is a pro member
+  Given I am logged in as "jimi@random.com"
+  And I am on the "profile" page for "Jimi"
+  Then I should see "You are a pro member"
+  And I should not see "Sign up for pro membership!"
