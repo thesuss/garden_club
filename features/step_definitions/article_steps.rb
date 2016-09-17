@@ -3,12 +3,15 @@ Given(/^"([^"]*)" has written the following articles:$/) do |name, table|
     set_user(name)
     title = hash[:title]
     body = hash[:body]
-    FactoryGirl.create(:article, title: title, body: body, user: @user)
+    tags = hash[:tags]
+    FactoryGirl.create(:article, title: title, body: body, tag_list: tags, user: @user)
   end
 end
 
 Given(/^I am on the article page for article "([^"]*)"$/) do |title|
-  visit article_path(Article.find_by(title: title))
+  article = Article.find_by(title: title)
+  visit article_path(article)
+  expect(current_path).to eq article_path(article)
 end
 
 Given(/^I am on the "([^"]*)" for "([^"]*)"$/) do |page, user|

@@ -20,6 +20,10 @@ Then(/^I should see "([^"]*)"$/) do |text|
   expect(page).to have_content(text)
 end
 
+Then(/^I should not see "([^"]*)"$/) do |text|
+  expect(page).not_to have_content(text)
+end
+
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |element, text|
   fill_in element, with: text
 end
@@ -96,4 +100,8 @@ Then(/^I should see:$/) do |table|
   table.hashes.each do |hash|
     expect(page).to have_content hash[:content]
   end
+end
+
+Then(/^show me the page$/) do
+  save_and_open_page
 end

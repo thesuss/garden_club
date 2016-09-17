@@ -10,12 +10,13 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @tags = @article.tag_list.sort_by!{ |e| e.downcase }
+    @last = @tags.last
   end
 
   def create
     if current_user
-      @user = User.find(params[:user_id])
-      @article = @user.articles.create(article_params)
+      @article = current_user.articles.create(article_params)
       redirect_to article_path(@article)
     else
       redirect_to new_user_session_path
@@ -30,7 +31,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-     params.require(:article).permit(:title, :body, :user_id)
+    params.require(:article).permit(:title, :body, :user_id, :tag_list)
   end
 
   def error_message

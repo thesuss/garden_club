@@ -5,3 +5,9 @@
 <p>
   Author: <%= link_to @article.user.name, user_profile_path(@article.user) %>
 </p>
+<p>
+  Tags:
+  <% @tags.each do |tag| %>
+    <%= link_to tag, tag_path(tag) %><% unless tag == @last || @tags.nil? %>,<% end %>
+  <% end %>
+</p>
