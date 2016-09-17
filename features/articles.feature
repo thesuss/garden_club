@@ -6,12 +6,18 @@ Background:
   Given the following users exist:
   | name   | email           | password  |  password_confirmation |
   | Anna   | anna@random.com | password  |  password              |
+  | Boon   | boon@random.com | password  |  password              |
 
   And "Anna" has written the following articles:
     | title   | body             |
     | One     | One awesome text |
     | Two     | Two awesome text |
     | Three   | Three good texts |
+
+  And "Boon" has written the following articles:
+    | title   | body             |
+    | Four    | Four good texts  |
+
 
 Scenario: Write an article
   Given I am logged in as "anna@random.com"
@@ -71,3 +77,9 @@ Scenario: Edit an article
   And I click the "Update article" button
   Then I should see "Article Title New"
   And I should see "Article Body New"
+
+
+Scenario: Not be able to edit an article with another author
+  Given I am logged in as "anna@random.com"
+  And I am on the article page for article "Four"
+  Then I should not see "Edit article"
