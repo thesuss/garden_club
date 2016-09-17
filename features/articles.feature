@@ -61,3 +61,13 @@ Scenario: Not seeing edit button on article, logged in
   And I am on the article page for article "One"
   Then I should see "One awesome text"
   And I should not see "Edit article"
+
+Scenario: Edit an article
+  Given I am logged in as "anna@random.com"
+  And I am on the article page for article "One"
+  When I click the "Edit article" link
+  When I fill in "Title" with "Article Title New"
+  And I fill in "Body" with "Article Body New"
+  And I click the "Update article" button
+  Then I should see "Article Title New"
+  And I should see "Article Body New"

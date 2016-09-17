@@ -24,6 +24,20 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def update
+    if current_user
+      @article = Article.find(params[:id])
+      if @article.update(article_params)
+        redirect_to @article
+      else
+        render 'edit'
+      end
+    else
+      redirect_to new_user_session_path
+      flash[:notice] = error_message
+    end
+  end
+
   def index
     @article = Article.find_by(user_id: params[:user_id])
     @user = User.find_by(id: params[:user_id])
@@ -33,7 +47,6 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body, :user_id, :tag_list)
   end
-
   def error_message
     "You are not logged in - you need to be logged in to see the page you were trying to reach"
   end
