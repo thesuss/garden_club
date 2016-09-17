@@ -48,3 +48,16 @@ Scenario: Viewing an article from the user's article index
   Then I should see "One"
   When I click the "One" link
   Then I should see "One awesome text"
+
+
+Scenario: Seeing edit button on article, logged in
+  Given I am logged in as "anna@random.com"
+  And I am on the article page for article "One"
+  Then I should see "One awesome text"
+  And I should see "Edit article"
+
+Scenario: Not seeing edit button on article, logged in
+  Given I am not logged in
+  And I am on the article page for article "One"
+  Then I should see "One awesome text"
+  And I should not see "Edit article"
