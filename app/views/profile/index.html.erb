@@ -17,7 +17,13 @@
     <%= @user.g_street2 %><br>
     <%= @user.g_postcode %>, <%= @user.g_city %>, <%= @user.g_country %>
   <% end %>
-
+</div>
+<div>
+  <% if current_user.pro %>
+    <p> <%= @user.name %> is a pro member</p>
+  <% else %>
+    <p>  <%= @user.name %> has not signed up for pro membership</p>
+  <% end %>
 </div>
 <div>
   <% if @user.articles != nil %>
