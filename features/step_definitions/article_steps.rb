@@ -29,6 +29,13 @@ Given(/^I visit someones edit article page$/) do
   visit edit_article_path(article)
 end
 
+When(/^I fill in "([^"]*)" with nothing$/) do |element|
+  fill_in element, with: ''
+end
+
+
+
+
 def set_user(name)
   @user = User.find_by(name: name)
 end
