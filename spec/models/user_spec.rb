@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'DB table' do
     it { is_expected.to have_db_column :id }
+    it { is_expected.to have_db_column :pro }
     it { is_expected.to have_db_column :name }
     it { is_expected.to have_db_column :email }
     it { is_expected.to have_db_column :encrypted_password }
@@ -26,11 +27,29 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_length_of :password }
   end
 
+  describe 'pro member' do
+    it 'should be boolean' do
+      @user = FactoryGirl.build(:user, name: "Amber")
+      expect(@user.pro).to be(true).or be(false)
+    end
+
+    it 'should be default false' do
+      @user = FactoryGirl.build(:user, name: "Amber")
+      expect(@user.pro).to be(false)
+    end
+
+    it 'should be settable to true' do
+      @user = FactoryGirl.build(:user, name: "Amber", pro: true)
+      expect(@user.pro).to be(true)
+    end
+  end
+
   describe 'Factory' do
     it 'should have valid Factory' do
       expect(FactoryGirl.create(:user)).to be_valid
     end
   end
+
 
   describe 'Actual validation of confirmation?' do
     it 'tests password confirmation' do
