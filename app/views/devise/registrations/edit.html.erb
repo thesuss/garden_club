@@ -4,7 +4,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'pure-form pure-form-aligned' }) do |f| %>
   <%= devise_error_messages! %>
   <div>
-    <%= link_to 'Get Pro', pay_path %>
+    <%= link_to 'Get Pro', new_charge_path %>
     <% if current_user.pro %>
       <p> You are a pro member</p>
     <% else %>
