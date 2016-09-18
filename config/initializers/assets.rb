@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( pure-min.css )
 Rails.application.config.assets.precompile += %w( grids-responsive-min.css )
 Rails.application.config.assets.precompile += %w( alerts.css )
+Rails.application.config.assets.precompile += %w( ratyrate.js )
