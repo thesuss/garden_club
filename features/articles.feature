@@ -4,9 +4,9 @@ Feature: As a user
 
 Background:
   Given the following users exist:
-  | name   | email           | password  |  password_confirmation |
-  | Anna   | anna@random.com | password  |  password              |
-  | Boon   | boon@random.com | password  |  password              |
+  | name   | email           |
+  | Anna   | anna@random.com |
+  | Boon   | boon@random.com | 
 
   And "Anna" has written the following articles:
     | title   | body             |
