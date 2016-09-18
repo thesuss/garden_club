@@ -36,7 +36,7 @@ Scenario: View rating average of an article
   Given article "One" has a rating of "3.5"
   When I am on the article page for article "One"
   Then I should see "Average rating:"
-  Then I should find a class with data-rating "3.5"
+  Then I should see "3.5" stars
 
 Scenario: Viewing top rated articles on home page
   Given article "One" has a rating of "1"

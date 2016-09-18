@@ -48,6 +48,8 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'launchy'
   gem 'dotenv-rails'
+  gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
 end
 
 group :development do

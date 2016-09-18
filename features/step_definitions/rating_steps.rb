@@ -6,6 +6,6 @@ Given(/^article "([^"]*)" has a rating of "([^"]*)"$/) do |title, rating|
 end
 
 
-Then(/^I should find a class with data-rating "([^"]*)"$/) do |rating|
+Then(/^I should see "([^"]*)" stars$/) do |rating|
   expect(page).to have_xpath('//div[@data-rating=' + rating + ']')
 end
