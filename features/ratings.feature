@@ -26,3 +26,8 @@ Scenario: Visitors cannot rate articles
   And I am on the article page for article "One"
   Then I should see "One awesome text"
   And I should not see "Rate this article"
+
+Scenario: Users can't rate their own articles
+  Given I am logged in as "hanna@random.com"
+  And I am on the article page for article "One"
+  Then I should not see "Rate this article"
