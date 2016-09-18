@@ -9,6 +9,8 @@ class User < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
 
+  ratyrate_rater
+
   validates :name,  presence: true,
                     uniqueness: { case_sensitive: false }
   validates :email, presence: true,
