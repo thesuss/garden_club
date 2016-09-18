@@ -31,3 +31,8 @@ Scenario: Users can't rate their own articles
   Given I am logged in as "hanna@random.com"
   And I am on the article page for article "One"
   Then I should not see "Rate this article"
+
+Scenario: View rating average of an article
+  Given article "One" has a rating of "3.5"
+  When I am on the article page for article "One"
+  Then I should see "Average rating: 3.5"

@@ -34,7 +34,7 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
-gem 'ratyrate'
+gem 'ratyrate', git: "git://github.com/wazery/ratyrate.git"
 
 group :development, :test do
   gem 'rspec-rails'
