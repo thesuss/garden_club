@@ -14,8 +14,10 @@ Given(/^I am on the article page for article "([^"]*)"$/) do |title|
   expect(current_path).to eq article_path(article)
 end
 
-Given(/^I am on the "([^"]*)" for "([^"]*)"$/) do |page, user|
+Given(/^I am on the "([^"]*)" for "([^"]*)"$/) do |page, name|
+  set_user(name)
   visit user_articles_path(@user)
+  binding.pry
 end
 
 Given(/^I visit someones compose page$/) do
