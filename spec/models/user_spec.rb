@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
 
     it 'should be default false' do
       @user = FactoryGirl.build(:user, name: "Amber")
-      expect(@user.pro).to be(false)    
+      expect(@user.pro).to be(false)
     end
 
     it 'should be settable to true' do
