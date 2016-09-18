@@ -24,17 +24,20 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def update
+  def edit
     if current_user
-      @article = Article.find(params[:id])
-      if @article.update(article_params)
-        redirect_to @article
-      else
-        render 'edit'
-      end
     else
       redirect_to new_user_session_path
       flash[:notice] = error_message
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
     end
   end
 

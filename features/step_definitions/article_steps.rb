@@ -24,6 +24,11 @@ Given(/^I visit someones compose page$/) do
   visit new_user_article_path(@user)
 end
 
+Given(/^I visit someones edit article page$/) do
+  article = FactoryGirl.create(:article)
+  visit edit_article_path(article)
+end
+
 def set_user(name)
   @user = User.find_by(name: name)
 end

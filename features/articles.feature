@@ -68,6 +68,11 @@ Scenario: Not seeing edit button on article, logged in
   Then I should see "One awesome text"
   And I should not see "Edit article"
 
+Scenario: Trying to edit an article when not logged in
+  Given I am not logged in
+  And I visit someones edit article page
+  Then I should see "You are not logged in"
+
 Scenario: Edit an article
   Given I am logged in as "anna@random.com"
   And I am on the article page for article "One"
