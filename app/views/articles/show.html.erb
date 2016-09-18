@@ -11,6 +11,10 @@
     <%= link_to tag, tag_path(tag) %><% unless tag == @last || @tags.nil? %>,<% end %>
   <% end %>
 </p>
+<% if current_user == @article.user%>
+  <%= link_to 'Edit article', edit_article_path %>
+<% end %>
+<div>
 <% if current_user && current_user != @article.user %>
   <p>
     Rate this article: <%= rating_for_user @article, current_user, 'rating',
@@ -22,3 +26,4 @@
 <% unless @article.rating_average.nil? %>
   Average rating: <%= rating_for @article, 'rating' %>
 <% end %>
+</div>

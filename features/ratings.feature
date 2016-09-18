@@ -15,11 +15,13 @@ Background:
     | Two     | Two awesome text |
     | Three   | Three good texts |
 
+@javascript
 Scenario: Amber rates Hanna's articles
   Given I am logged in as "amber@random.com"
   And I am on the article page for article "One"
   Then I should see "Rate this article"
-  # Testing this further would require all kinds of Javascript
+  When I click on "4" stars
+  # Then I should see "4" stars
 
 Scenario: Visitors cannot rate articles
   Given I am not logged in
