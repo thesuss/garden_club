@@ -35,8 +35,11 @@ Scenario: Users can't rate their own articles
 Scenario: View rating average of an article
   Given article "One" has a rating of "3.5"
   When I am on the article page for article "One"
-  Then I should see "Average rating: 3.5"
+  Then I should see "Average rating:"
 
 Scenario: Viewing top rated articles on home page
-  Given I am on the "home" page
+  Given article "One" has a rating of "1"
+  And article "Three" has a rating of "5"
+  And I am on the "home" page
   Then I should see "Top rated articles"
+  And I should see "Three One"

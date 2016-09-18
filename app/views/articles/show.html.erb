@@ -17,6 +17,8 @@
       disable_after_rate: false,
       cancel: false,
       space: true %><br>
-    Average rating: <%= rating_for @article, 'rating' %>
   </p>
+<% end %>
+<% unless @article.rating_average.nil? %>
+  Average rating: <%= rating_for @article, 'rating' %>
 <% end %>
