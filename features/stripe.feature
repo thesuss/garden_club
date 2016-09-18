@@ -10,6 +10,6 @@ Background:
 
 Scenario: I sign up for my paid membership
   Given I am logged in as "anna@random.com"
-  And I am on the "profile" page for "Anna"
-  When I click the "Pro" link
+  And I am on the "Edit Profile" page for "Anna"
+  When I click the "Get Pro" link
   Then I should see "Sign up for pro membership"

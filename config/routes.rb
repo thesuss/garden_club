@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   end
   root controller: :home, action: :index
   resources :tags, only: :show
-  # get 'stripe', controller: :profile, action: :stripe
+  get 'stripe', as: :pay, controller: :profile, action: :stripe
 
 end
